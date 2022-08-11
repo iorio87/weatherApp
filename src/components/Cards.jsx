@@ -1,10 +1,9 @@
 import React from 'react';
-import './Cards.css';
 import Card from './Card';
 
 export default function Cards({cities, onClose}) {
   return (
-    <div className=''>
+    <div className='inline-grid grid-cols-3 gap-4'>
       {cities.map(c => <Card
           key={c.id}
           max={c.max}

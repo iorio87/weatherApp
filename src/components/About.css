@@ -1,0 +1,13 @@
+.body {
+    border: 1px solid grey;
+    width: 320px;
+    margin: 10px auto;
+    background: white;
+}
+
+.imagen{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+
+}

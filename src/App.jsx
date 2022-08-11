@@ -7,10 +7,9 @@ import About from "./components/About.jsx";
 import Ciudad from "./components/Ciudad";
 import Footer from "./components/Footer";
 
-
 const apiKey = "4ae2636d8dfbdc3044bede63951a019b";
 
-function App() { 
+function App() {
   const [cities, setCities] = useState([]);
   function onClose(id) {
     setCities((oldCities) => oldCities.filter((c) => c.id !== id));
@@ -46,7 +45,7 @@ function App() {
         }
       });
   }
-  function onFilter(ciudadId) {   
+  function onFilter(ciudadId) {
     let ciudad = cities.filter((c) => c.id === parseInt(ciudadId));
     if (ciudad.length > 0) {
       return ciudad[0];
@@ -57,34 +56,24 @@ function App() {
 
   return (
     <div className="App container">
-    <Route
-      exact path='/'
-      render={() => <Nav onSearch={onSearch} />}
-    />
+      <Route
+        path="/ciudad/:ciudadId"
+        render={({ match }) => (
+          <Ciudad city={onFilter(match.params.ciudadId)} />
+        )}
+      />
+      <Route path="/" render={() => <Nav onSearch={onSearch} />} />
 
-    <Route
-      exact path='/'
-      render={() => <Cards cities={cities} onClose={onClose} />}
-    />
+      <Route
+        
+        path="/"
+        render={() => <Cards cities={cities} onClose={onClose} />}
+      />
 
-    <Route
-      
-      path='/ciudad/:ciudadId'
-      render={({ match }) => <Ciudad
-        city={onFilter(match.params.ciudadId)}
-      />}
-    />
-    <Route
-      path='/about'
-      component={About}
-    />
+      <Route path="/about" component={About} />
 
-    <Route
-      exact path='/'
-      component={Footer}
-    />
-    
-  </div>
+      <Route exact path="/" component={Footer} />
+    </div>
   );
 }
 

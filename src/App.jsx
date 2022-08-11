@@ -57,22 +57,33 @@ function App() {
   return (
     <div className="App container">
       <Route
-        path="/ciudad/:ciudadId"
-        render={({ match }) => (
-          <Ciudad city={onFilter(match.params.ciudadId)} />
-        )}
+        exact path='/'
+        render={() => <Nav onSearch={onSearch} />}
       />
-      <Route path="/" render={() => <Nav onSearch={onSearch} />} />
 
       <Route
-        
-        path="/"
+        exact path='/'
         render={() => <Cards cities={cities} onClose={onClose} />}
       />
 
-      <Route path="/about" component={About} />
+      <Route
+        exact
+        path='/ciudad/:ciudadId'
+        render={({ match }) => <Ciudad
+          city={onFilter(match.params.ciudadId)}
+        />}
+      />
+      <Route
+        path='/about'
+        component={About}
+      />
 
-      <Route exact path="/" component={Footer} />
+      <Route
+        exact='true'
+        path='/'
+        component={Footer}
+      />
+      
     </div>
   );
 }

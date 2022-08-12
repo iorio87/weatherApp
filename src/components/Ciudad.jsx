@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {TiWeatherSunny, TiWeatherWindy, TiWeatherCloudy, TiWeatherPartlySunny} from 'react-icons/ti'
+import { AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai'
+
 
 export default function Ciudad({ city }) {
   
@@ -14,117 +17,39 @@ export default function Ciudad({ city }) {
 
         <ul role="list" class="my-7 space-y-5">
           <li class="flex space-x-3">
-            <svg
-              aria-hidden="true"
-              class="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-blue-500"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-              <path
-                fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-              Temperatura: {city.temp}ºC
+            
+            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 inline-flex gap-2">
+              <TiWeatherSunny className="text-yellow-700"/> Temperatura: {city.temp}ºC
             </span>
           </li>
           <li class="flex space-x-3">
-            <svg
-              aria-hidden="true"
-              class="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-blue-500"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-              <path
-                fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-              Clima: {city.weather}
+           
+            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 inline-flex gap-2">
+              <TiWeatherPartlySunny className="text-lg"/> Cielo: {city.weather}
             </span>
           </li>
           <li class="flex space-x-3">
-            <svg
-              aria-hidden="true"
-              class="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-blue-500"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-              <path
-                fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-              Viento: {city.wind} km/h
+            
+            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 inline-flex gap-2">
+              <TiWeatherWindy className="text-lg"/> Viento: {city.wind} km/h
             </span>
           </li>
           <li class="flex space-x-3">
-            <svg
-              aria-hidden="true"
-              class="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-blue-500"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-             
-              <path
-                fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-              Cantidad de nubes: {city.clouds}
+          
+            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 inline-flex gap-2">
+              <TiWeatherCloudy className="text-lg text-gray-500"/> Nubosidad: {city.clouds}%
             </span>
           </li>
           <li class="flex space-x-3">
-            <svg
-              aria-hidden="true"
-              class="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-blue-500"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-             
-              <path
-                fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-              Minima: {city.min}º
+           
+            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400  inline-flex gap-2">
+              <AiFillMinusCircle className="text-lg text-blue-700"/> Minima: {city.min}º
             </span>
           </li>
           <li class="flex space-x-3">
-            <svg
-              aria-hidden="true"
-              class="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-blue-500"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-              <path
-                fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
-              Maxima: {city.max}º
+           
+            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 inline-flex gap-2">
+              <AiFillPlusCircle className="text-lg text-red-700"/> Maxima: {city.max}º
             </span>
           </li>
         </ul>

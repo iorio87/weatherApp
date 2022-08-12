@@ -15,6 +15,7 @@ export default function Cards({cities, onClose}) {
           sensacion={c.sensacion}
           onClose={() => onClose(c.id)}
           id={c.id}
+          nubosidad={c.clouds}
         /> )}
    
         

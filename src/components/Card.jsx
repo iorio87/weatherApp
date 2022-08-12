@@ -8,6 +8,7 @@ export default function Card({
   id,
   temp,
   sensacion,
+  nubosidad
 }) {
   return (  
 
@@ -21,14 +22,14 @@ export default function Card({
           </div>
           <div className="flex flex-col">
             <div>
-              <h1 className="font-bold text-gray-600 text-center">{name}</h1>
+              <h1 className="font-bold text-gray-600 text-center text-lg">{name}</h1>
             </div>
             <div className="my-6">
               <div className="flex flex-row space-x-4 items-center">
                 <div id="icon">
                   <span>
                     <img
-                      className="iconoClima"
+                      className=""
                       src={
                         "http://openweathermap.org/img/wn/" + img + "@2x.png"
                       }
@@ -42,6 +43,9 @@ export default function Card({
                   <h4 className="text-4xl">{temp}&deg;C</h4>
                   <p className="text-xs text-gray-500">
                     Sensacion Termica {sensacion}&deg;C
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    Nubosidad {nubosidad}%
                   </p>
                 </div>
               </div>

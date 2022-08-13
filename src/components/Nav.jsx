@@ -6,23 +6,23 @@ import SearchBar from "./SearchBar.jsx";
 
 function Nav({ onSearch }) {
   return (
-    <nav className="inline-grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-6 content-center bg-gray-300 rounded-md">
-      <div className="col-start-1 align-items-center ml-2">
+    <nav className="sm:inline-grid sm:grid-cols-7 content-center bg-gray-100 rounded-md gap-3">
+      <div className="col-start-1 sm:col-span-3 xl:col-span-2 align-items-center sm:ml-2">
         <Link to="/">
-          <span className="inline-grid grid-cols-2 content-center pt-2">
+          <span className="sm:inline-grid grid-cols-1 sm:grid-cols-2 content-center pt-2">
             <img
-              id="logoHenry"
+              id="logoweather"
               src={Logo}
               width="30"
               height="30"
-              className="content-center"
+              className="sm:content-center mx-auto"
               alt=""
             />
             Weather App
           </span>
         </Link>
       </div>
-      <div className="col-end-5 col-span-3 sm:col-span-2  xl:col-end-7 xl:col-span-3">
+      <div className="sm:col-span-4 sm:grid-cols-2 xl:col-span-5">
         <SearchBar onSearch={onSearch} />
       </div>
     </nav>

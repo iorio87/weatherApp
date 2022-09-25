@@ -7,7 +7,7 @@ import About from "./components/About.jsx";
 import Ciudad from "./components/Ciudad";
 import Footer from "./components/Footer";
 
-const apiKey = "4ae2636d8dfbdc3044bede63951a019b";
+const KEY = import.meta.env.VITE_API_KEY
 
 function App() {
   const [cities, setCities] = useState([]);
@@ -17,12 +17,11 @@ function App() {
   function onSearch(ciudad) {
     //Llamado a la API del clima
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${KEY}&units=metric`
     )
       .then((r) => r.json())
       .then((recurso) => {
-        if (recurso.main !== undefined) {
-          console.log(recurso);
+        if (recurso.main !== undefined) {       
           const ciudad = {
             min: Math.round(recurso.main.temp_min),
             max: Math.round(recurso.main.temp_max),

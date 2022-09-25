@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './Card';
-import imagen from '../img/fondo2.jpg'
+
 
 export default function Cards({cities, onClose}) {
   return (
@@ -16,6 +16,7 @@ export default function Cards({cities, onClose}) {
           onClose={() => onClose(c.id)}
           id={c.id}
           nubosidad={c.clouds}
+          estado={c.weather}
         /> )}
    
         

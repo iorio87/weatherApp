@@ -56,7 +56,7 @@ function App() {
   }
 
   return (
-    <div className="bg-[url('./img/fondo2.jpg')] bg-cover bg-fixed h-fit min-h-screen p-0">
+    <div className="bg-[url('./img/fondo2.jpg')] bg-cover bg-fixed h-fit min-h-screen p-0 ">
       <Route
         exact path='/'
         render={() => <Nav onSearch={onSearch} />}

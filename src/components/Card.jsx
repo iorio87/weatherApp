@@ -24,7 +24,7 @@ useEffect(() => {
 console.log(icon);
 
   return (
-    <div className="container m-3">
+    <div className="m-3">
       <div className="flex items-center justify-center h-full">
         <div className="bg-white shadow-2xl p-6 rounded-2xl border-2 border-gray-50">
           <div
